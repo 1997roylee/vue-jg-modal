@@ -4,12 +4,12 @@
   "browser": {
     "./sfc": "src/VueJsModal.vue"
   },
-  "version": "0.1.21",
+  "version": "0.1.22",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib --name vuemodal ./src/index.js",
+    "build-bundle": "vue-cli-service build --target lib --name vuemodal ./projects/index.js",
     "lint": "vue-cli-service lint",
     "eslint-fix": "eslint src/**/**/*.vue --fix",
     "format-code": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.vue\""

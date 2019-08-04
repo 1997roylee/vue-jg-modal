@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isShow" class>
+  <div v-show="isShow" class>
     <div :class="[backgroundColorStyle]" class="overlayClass" @click.self="hide">
       <div
         :class="{show: isShow}"
