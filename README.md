@@ -1,30 +1,12 @@
-# vue-js-roy-modal
+# vue-js-modal
 
-## Project setup
-```
-npm install
-```
+## Npm Install Component
+https://www.npmjs.com/package/@roylee1997/vue-js-modal
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+###
+<code>
+npm i @roylee1997/vue-js-modal
+</code>
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# vue-jg-modal
+## Example
+In src folder, please run <code>npm install</code> before you start the commands <code>npm run serve</code>.
