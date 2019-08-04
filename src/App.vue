@@ -4,7 +4,7 @@
     <button @click="showDialog('Apple')">Show Apple Modal</button>
     <button @click="showDialog('Banna')">Show Banna Modal</button>
 
-    <v-modal name="Apple">
+    <v-modal name="Apple" @onShow="onShow" @onClose="onClose">
       <div style="background-color: white;">
         <div style="height: 200px;"></div>
         <div class="bTn" @click="closeDialog('Apple')">Close</div>
@@ -12,7 +12,9 @@
     </v-modal>
 
     <v-modal name="Banna" :height="700" :width="600" :maxHeight="700">
-      <div style='height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center'>
+      <div
+        style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center"
+      >
         <h1>Title</h1>
         <div class="bTn" @click="closeDialog('Banna')">Close</div>
       </div>
@@ -28,6 +30,12 @@ export default {
     },
     closeDialog(name) {
       this.$VModal.hide(name)
+    },
+    onShow() {
+      console.log('onShow')
+    },
+    onClose() {
+      console.log('onClose')
     },
   },
 }

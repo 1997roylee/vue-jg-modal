@@ -31,7 +31,7 @@ export default {
     },
     maxHeight: {
       type: Number,
-      default: 500,
+      default: 1000,
     },
     minHeight: {
       type: Number,
@@ -69,21 +69,21 @@ export default {
     },
     handleToggleEvent(name, isShow) {
       if (name !== this.name || this.name === undefined) return
-      this.isShow = isShow
+      if (isShow) this.show()
+      else this.hide()
     },
     hide() {
-      this.$emit('onClose', true)
       this.isShow = false
+      this.$emit('onClose', true)
     },
     show() {
-      this.$emit('onShow', true)
       this.isShow = true
+      this.$emit('onShow', true)
     },
   },
   watch: {
     isShow() {
-      if (this.isShow === false) return;
-
+      if (this.isShow === false) return
     },
   },
 }
@@ -123,8 +123,8 @@ export default {
   align-items: center;
 }
 
-.d-container{
-    display: flex;
-    flex-direction: column;
+.d-container {
+  display: flex;
+  flex-direction: column;
 }
 </style>
