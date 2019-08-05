@@ -1,6 +1,6 @@
 <template>
   <div v-if="isShow" class>
-    <div :class="[backgroundColorStyle]" class="overlayClass" @click.self="hide">
+    <div :class="[backgroundColorStyle]" class="overlayClass" @click.self="onOverlayClick">
       <div
         :class="{show: isShow}"
         class="d-container d-bg-white d-rounded d-overflow transition"
@@ -40,10 +40,11 @@ export default {
     theme: {
       type: String,
       default: 'Default',
-      validator(value) {
-        return true
-      },
     },
+    prevent: {
+      type: Boolean,
+      default: false,
+    }
   },
   data() {
     return {
@@ -61,6 +62,10 @@ export default {
     window.removeEventListener('resize', this.handleWindowResize)
   },
   methods: {
+    onOverlayClick(){
+      if (this.prevent == true) return;
+      this.hide();
+    },
     handleWindowResize() {
       if (window.outerHeight < this.maxHeight)
         this.maxHeight = window.outerHeight

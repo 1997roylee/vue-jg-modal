@@ -1,17 +1,16 @@
 {
   "name": "@roylee1997/vue-js-modal",
-  "main": "dist/vuemodal.umd.js",
+  "main": "dist/vue-js-modal.umd.js",
   "browser": {
-    "./sfc": "src/VueJsModal.vue"
+    "./sfc": "src/App.vue"
   },
-  "version": "0.1.21",
+  "version": "0.1.32",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib --name vuemodal ./src/index.js",
+    "build": "vue-cli-service build --target lib --name vue-js-modal ./projects/VueJsModal/index.js",
     "lint": "vue-cli-service lint",
-    "eslint-fix": "eslint src/**/**/*.vue --fix",
+    "eslint-fix": "eslint --ext .js,.vue src projects --fix",
     "format-code": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.vue\""
   },
   "dependencies": {

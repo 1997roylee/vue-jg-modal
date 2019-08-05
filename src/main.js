@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import VueJsModal from "../projects/index";
+import VueJsModal from "../projects/VueJsModal/index";
 
 Vue.config.productionTip = false;
 Vue.use(VueJsModal);

@@ -4,7 +4,7 @@
     <button @click="showDialog('Apple')">Show Apple Modal</button>
     <button @click="showDialog('Banna')">Show Banna Modal</button>
 
-    <v-modal name="Apple">
+    <v-modal prevent name="Apple">
       <div style="background-color: white;">
         <div style="height: 200px;"></div>
         <div class="bTn" @click="closeDialog('Apple')">Close</div>
