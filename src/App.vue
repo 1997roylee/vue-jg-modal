@@ -1,41 +1,223 @@
 <template>
   <div id="app">
-    <img style="width: 400px;" src="https://miro.medium.com/max/1400/0*GNk0sTDMLswggbQE.jpg" alt>
-    <button @click="showDialog('Apple')">Show Apple Modal</button>
-    <button @click="showDialog('Banna')">Show Banna Modal</button>
-
-    <v-modal name="Apple" @onShow="onShow" @onClose="onClose">
-      <div style="background-color: white;">
-        <div style="height: 200px;"></div>
-        <div class="bTn" @click="closeDialog('Apple')">Close</div>
-      </div>
-    </v-modal>
-
-    <v-modal name="Banna" :height="700" :width="600" :maxHeight="700">
-      <div
-        style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center"
+    <h1>Button Size</h1>
+    <div class="flex">
+      <v-btn class="mr-4" @click="showDialog('Apple')">Button 01</v-btn>
+      <v-btn class="mr-4" size="medium" @click="showDialog('Apple')"
+        >Button 02</v-btn
       >
-        <h1>Title</h1>
-        <div class="bTn" @click="closeDialog('Banna')">Close</div>
-      </div>
-    </v-modal>
+      <v-btn class="mr-4" size="large" @click="showDialog('Apple')"
+        >Button 03</v-btn
+      >
+    </div>
+    <h1 class="pt-4">Button Rounded</h1>
+    <div class="flex pt-4">
+      <v-btn class="mr-4" rounded="none" @click="showDialog('Apple')"
+        >Button 01</v-btn
+      >
+      <v-btn class="mr-4" rounded="small" @click="showDialog('Apple')"
+        >Button 02</v-btn
+      >
+      <v-btn class="mr-4" rounded="full" @click="showDialog('Apple')"
+        >Button 03</v-btn
+      >
+    </div>
+    <h1 class="pt-4">Button Theme</h1>
+    <div class="flex pt-4">
+      <v-btn
+        class="mr-4"
+        theme="primary"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 01</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        theme="modern"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 02</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        theme="dark"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 03</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        theme="gray"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 04</v-btn
+      >
+    </div>
+    <h1 class="pt-4">Button Outline</h1>
+    <div class="flex pt-4">
+      <v-btn
+        class="mr-4"
+        outline
+        theme="primary"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 01</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        outline
+        theme="modern"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 02</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        outline
+        theme="dark"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 03</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        outline
+        theme="gray"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 04</v-btn
+      >
+    </div>
+    <h1 class="pt-4">Button Disabled Status</h1>
+    <div class="flex pt-4">
+      <v-btn
+        class="mr-4"
+        disabled
+        theme="primary"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 01</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        disabled
+        theme="modern"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 02</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        disabled
+        theme="dark"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 03</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        disabled
+        theme="gray"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 04</v-btn
+      >
+    </div>
+    <h1 class="pt-4">Button Disabled Status ( Click Unlock )</h1>
+    <div class="flex pt-4">
+      <v-btn class="mr-4" @click="onUnLock">Unlock</v-btn>
+      <v-btn
+        class="mr-4"
+        :disabled="lock"
+        theme="primary"
+        size="medium"
+        @click="onUnLock"
+        >Button 01</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        :disabled="lock"
+        theme="modern"
+        size="medium"
+        @click="onUnLock"
+        >Button 02</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        :disabled="lock"
+        theme="dark"
+        size="medium"
+        @click="onUnLock"
+        >Button 03</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        :disabled="lock"
+        theme="gray"
+        size="medium"
+        @click="onUnLock"
+        >Button 04</v-btn
+      >
+    </div>
+    <h1 class="pt-4">Button Loading Status</h1>
+    <div class="flex pt-4">
+      <v-btn
+        class="mr-4"
+        loading
+        theme="primary"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 01</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        loading
+        theme="modern"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 02</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        loading
+        theme="dark"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 03</v-btn
+      >
+      <v-btn
+        class="mr-4"
+        loading
+        theme="gray"
+        size="medium"
+        @click="showDialog('Apple')"
+        >Button 04</v-btn
+      >
+    </div>
+    <h1>Full Width Button</h1>
+    <div style="width: 500px;">
+      <v-btn full>Button 01</v-btn>
+      <v-btn theme="modern" full>Button 01</v-btn>
+      <v-btn theme="dark" full>Button 01</v-btn>
+      <v-btn theme="gray" full>Button 01</v-btn>
+    </div>
   </div>
 </template>
 <script>
 export default {
   name: 'app',
+  data() {
+    return {
+      lock: true,
+      message: '',
+    }
+  },
   methods: {
-    showDialog(name) {
-      this.$VModal.show(name)
+    showDialog(name = '') {
+      this.message = name
     },
-    closeDialog(name) {
-      this.$VModal.hide(name)
-    },
-    onShow() {
-      console.log('onShow')
-    },
-    onClose() {
-      console.log('onClose')
+    onUnLock() {
+      this.lock = false
     },
   },
 }
@@ -45,13 +227,17 @@ export default {
 * {
   box-sizing: border-box;
 }
-
-.bTn {
-  width: 100%;
-  padding: 16px 10px;
-  text-align: center;
-  background-color: orange;
-  cursor: pointer;
-  color: white;
+body,
+html {
+  font-family: 'Lato', sans-serif !important;
+}
+.flex {
+  display: flex;
+}
+.pt-4 {
+  padding-top: 16px;
+}
+.mr-4 {
+  margin-right: 16px;
 }
 </style>

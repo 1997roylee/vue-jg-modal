@@ -1,17 +1,16 @@
 {
-  "name": "@roylee1997/vue-js-modal",
-  "main": "dist/vuemodal.umd.js",
+  "name": "@roylee1997/vue-js-button",
+  "main": "dist/vue-js-button.umd.js",
   "browser": {
-    "./sfc": "src/VueJsModal.vue"
+    "./sfc": "src/App.vue"
   },
-  "version": "0.1.23",
+  "version": "0.1.1",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib --name vuemodal ./projects/index.js",
+    "build": "vue-cli-service build --target lib --name vue-js-button ./projects/ButtonComponent/index.js",
     "lint": "vue-cli-service lint",
-    "eslint-fix": "eslint src/**/**/*.vue --fix",
+    "eslint-fix": "eslint --ext .js,.vue src projects --fix",
     "format-code": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.vue\""
   },
   "dependencies": {
@@ -30,7 +29,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-vue": "^5.2.3",
+    "eslint-plugin-vue": "^5.0.0-beta.6",
     "prettier": "^1.18.2",
     "prettier-eslint": "^9.0.0",
     "rollup-plugin-vue": "^5.0.1",
@@ -43,6 +42,7 @@
     },
     "extends": [
       "plugin:vue/essential",
+      "plugin:prettier/recommended",
       "eslint:recommended"
     ],
     "rules": {},
