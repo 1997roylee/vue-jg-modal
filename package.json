@@ -4,7 +4,7 @@
   "browser": {
     "./sfc": "src/App.vue"
   },
-  "version": "0.1.32",
+  "version": "0.1.34",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
